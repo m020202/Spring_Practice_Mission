@@ -16,7 +16,7 @@ public class ReviewImage extends BaseEntity {
     private Long id;
     private String image_url;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "review_id")
     private Review review;
 }

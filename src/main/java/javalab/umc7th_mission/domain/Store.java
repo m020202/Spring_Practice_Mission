@@ -29,7 +29,7 @@ public class Store extends BaseEntity {
 
     private BigDecimal score;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
     private Region region;
 
