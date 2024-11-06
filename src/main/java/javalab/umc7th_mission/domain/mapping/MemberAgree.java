@@ -2,7 +2,6 @@ package javalab.umc7th_mission.domain.mapping;
 
 import jakarta.persistence.*;
 import javalab.umc7th_mission.domain.Member;
-import javalab.umc7th_mission.domain.Mission;
 import javalab.umc7th_mission.domain.Terms;
 import javalab.umc7th_mission.domain.common.BaseEntity;
 import lombok.*;
