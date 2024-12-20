@@ -40,11 +40,15 @@ public class QMember extends EntityPathBase<Member> {
 
     public final StringPath name = createString("name");
 
+    public final StringPath password = createString("password");
+
     public final StringPath phoneNum = createString("phoneNum");
 
     public final NumberPath<Integer> point = createNumber("point", Integer.class);
 
     public final ListPath<javalab.umc7th_mission.domain.Review, QReview> reviewList = this.<javalab.umc7th_mission.domain.Review, QReview>createList("reviewList", javalab.umc7th_mission.domain.Review.class, QReview.class, PathInits.DIRECT2);
+
+    public final EnumPath<javalab.umc7th_mission.domain.enums.Role> role = createEnum("role", javalab.umc7th_mission.domain.enums.Role.class);
 
     public final EnumPath<javalab.umc7th_mission.domain.enums.SocialType> socialType = createEnum("socialType", javalab.umc7th_mission.domain.enums.SocialType.class);
 

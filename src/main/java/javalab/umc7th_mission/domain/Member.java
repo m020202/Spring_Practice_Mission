@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import javalab.umc7th_mission.domain.common.BaseEntity;
 import javalab.umc7th_mission.domain.enums.Gender;
 import javalab.umc7th_mission.domain.enums.MemberStatus;
+import javalab.umc7th_mission.domain.enums.Role;
 import javalab.umc7th_mission.domain.enums.SocialType;
 import javalab.umc7th_mission.domain.mapping.MemberAgree;
 import javalab.umc7th_mission.domain.mapping.MemberPrefer;
@@ -59,6 +60,16 @@ public class Member extends BaseEntity {
     private String email;
 
     private Integer point;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @Column(nullable = false)
+    private String password;
+
+    public void encodePassword(String password) {
+        this.password = password;
+    }
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Review> reviewList = new ArrayList<>();
